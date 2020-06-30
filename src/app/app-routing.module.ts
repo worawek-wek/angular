@@ -18,7 +18,7 @@ import { ProductAddComponent } from './pages/admin/products/product-add/product-
 import { WithdrawListComponent } from './pages/admin/withdraws/withdraw-list/withdraw-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'adminmanage' },
   { path: 'product', component: ProductComponent},
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
@@ -70,7 +70,7 @@ const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent,
   canActivate: [AuthGuard]},
 
-  { path: '**', pathMatch: 'full', redirectTo: '' }
+  { path: '**', pathMatch: 'full', redirectTo: 'adminmanage' }
 ];
 
 @NgModule({
